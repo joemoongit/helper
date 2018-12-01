@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Helper.Library
 {
-    public class Utility
+    public abstract class Utility
     {
         public int IndexOf_old(int gridcellIndex)
         {
