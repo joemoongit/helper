@@ -11,7 +11,6 @@ namespace Helper.Library
     {
         public N2Child2(LoginPage loginPage)
         {
-            Driver = loginPage.WebDriver();
             loginPage.Navbar1.Click();
             Child2WebElement.Click();
         }
@@ -30,7 +29,7 @@ namespace Helper.Library
             Dictionary<string, string> MultiSelectItemsDictionary = new Dictionary<string, string> { };
             MultiSelectField.Click();
             PopulateDictionary(MultiSelectItemsDictionary);
-            IJavaScriptExecutor jse = (IJavaScriptExecutor)Driver;
+            IJavaScriptExecutor jse = (IJavaScriptExecutor)WebDriver.Driver;
 
             foreach (string item in items)
             {
@@ -40,9 +39,9 @@ namespace Helper.Library
             return this;
         }
 
-        public IWebElement Child2WebElement => Driver.FindElement(By.LinkText("Child2"));
+        public IWebElement Child2WebElement => WebDriver.Driver.FindElement(By.LinkText("Child2"));
 
-        public IWebElement MultiSelectField => Driver.FindElement(By.CssSelector("#templateForm > section:nth-child(2)"));
-        public IWebElement MultiSelectItem(string itemIndex) => Driver.FindElement(By.CssSelector("#msMultiSelectItem_listbox > li:nth=child(" + (int.Parse(itemIndex) + 1).ToString() + ")"));
+        public IWebElement MultiSelectField => WebDriver.Driver.FindElement(By.CssSelector("#templateForm > section:nth-child(2)"));
+        public IWebElement MultiSelectItem(string itemIndex) => WebDriver.Driver.FindElement(By.CssSelector("#msMultiSelectItem_listbox > li:nth=child(" + (int.Parse(itemIndex) + 1).ToString() + ")"));
     }
 }

@@ -11,7 +11,6 @@ namespace Helper.Library
     {
         public N1Child1(LoginPage loginPage)
         {
-            Driver = loginPage.WebDriver();
             loginPage.Navbar1.Click();
             Child1WebElement.Click();
         }
@@ -24,10 +23,10 @@ namespace Helper.Library
         }
 
 
-        public IWebElement Child1WebElement => Driver.FindElement(By.LinkText("Child1"));
+        public IWebElement Child1WebElement => WebDriver.Driver.FindElement(By.LinkText("Child1"));
 
-        public IWebElement SomeField => Driver.FindElement(By.CssSelector("#someField"));
-        public IWebElement SomeButton => Driver.FindElement(By.CssSelector("#someButton"));
+        public IWebElement SomeField => WebDriver.Driver.FindElement(By.CssSelector("#someField"));
+        public IWebElement SomeButton => WebDriver.Driver.FindElement(By.CssSelector("#someButton"));
 
 
     }

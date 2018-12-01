@@ -11,7 +11,6 @@ namespace Helper.Library.Navbar2
     {
         public N1Child1(LoginPage loginPage)
         {
-            Driver = loginPage.WebDriver();
             loginPage.Navbar2.Click();
             Child1WebElement.Click();
         }
@@ -44,6 +43,6 @@ namespace Helper.Library.Navbar2
             return name;
         }
 
-        public IWebElement Child1WebElement => Driver.FindElement(By.LinkText("Child1"));
+        public IWebElement Child1WebElement => WebDriver.Driver.FindElement(By.LinkText("Child1"));
     }
 }

@@ -11,13 +11,12 @@ namespace Helper.Library
     {
         public N1Child2(LoginPage loginPage)
         {
-            Driver = loginPage.WebDriver();
             loginPage.Navbar1.Click();
             Child2WebElement.Click();
         }
 
 
 
-        public IWebElement Child2WebElement => Driver.FindElement(By.LinkText("Child2"));
+        public IWebElement Child2WebElement => WebDriver.Driver.FindElement(By.LinkText("Child2"));
     }
 }

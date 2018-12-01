@@ -15,14 +15,16 @@ namespace Helper.Scripts
         [TestInitialize]
         public void SetupTest()
         {
-            page = new LoginPage("userId", "password");
+            page = new LoginPage();
         }
 
         [TestMethod]
         public void RunScript()
         {
-            page.NavigateTo("https://markets.wsj.com");
-
+            page.OpenNewTab("https://markets.wsj.com");
+            page.SwitchTab(0);
+            page.SwitchTab("1");
+            page.Close();
         }
 
         [TestCleanup]

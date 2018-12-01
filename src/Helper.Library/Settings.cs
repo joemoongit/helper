@@ -36,6 +36,5 @@ namespace Helper.Library
             }
             this.LoginSettings = new LoginSettings();
         }
-
     }
 }

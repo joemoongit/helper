@@ -42,6 +42,7 @@ namespace Helper.Library
             userId = userIdOptional;
         }
     }
+}
 
     //public class MyLoginSettings : LoginSettings
     //{
