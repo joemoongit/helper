@@ -8,16 +8,15 @@ using OpenQA.Selenium;
 
 namespace Helper.Library
 {
-    public class LoginPage : BasePage
+    public class LoginPage : Browser
     {
         public LoginPage(string userId = null, string password = null)
         {
             WebDriver.Initialize();
-            NavigateTo("https://www.facebook.com");
-            //NavigateTo(Settings.EnvSettings.UrlPrefix + ".josephmoon.com/Login");
+            NavigateTo(Settings.EnvSettings.UrlPrefix + ".josephmoon.com/Login");
             if (userId == null && password == null)
             {
-                //LoginAs(Settings.LoginSettings.UserId + "@" + Settings.EnvSettings.OrgPrefix + Settings.LoginSettings.Org + ".com", Settings.LoginSettings.Password + Settings.EnvSettings.PasswordSuffix);
+                LoginAs(Settings.LoginSettings.UserId + "@" + Settings.EnvSettings.OrgPrefix + Settings.LoginSettings.Org + ".com", Settings.LoginSettings.Password + Settings.EnvSettings.PasswordSuffix);
             }
             else if (userId == null || password == null)
             {
@@ -45,18 +44,18 @@ namespace Helper.Library
         }
 
         // login page elements
-        public IWebElement LoginField => WebDriver.Driver.FindElement(By.Id("login"));
-        public IWebElement PasswordField => WebDriver.Driver.FindElement(By.Id("password"));
-        public IWebElement LoginButton => WebDriver.Driver.FindElement(By.Id("login-btn"));
+        public IWebElement LoginField => Driver.FindElement(By.Id("login"));
+        public IWebElement PasswordField => Driver.FindElement(By.Id("password"));
+        public IWebElement LoginButton => Driver.FindElement(By.Id("login-btn"));
 
-        public IWebElement CompanyLogo => WebDriver.Driver.FindElement(By.Id("company-logo"));
-        public IWebElement Recaptcha => WebDriver.Driver.FindElement(By.Id("reCaptcha"));
-        public IWebElement LoginFailMessage => WebDriver.Driver.FindElement(By.TagName("li"));
-        public IWebElement RememberMeButton => WebDriver.Driver.FindElement(By.Id("rememberme-checkbox"));
-        public IWebElement ForgotPasswordLink => WebDriver.Driver.FindElement(By.Id("forgot-password-link"));
+        public IWebElement CompanyLogo => Driver.FindElement(By.Id("company-logo"));
+        public IWebElement Recaptcha => Driver.FindElement(By.Id("reCaptcha"));
+        public IWebElement LoginFailMessage => Driver.FindElement(By.TagName("li"));
+        public IWebElement RememberMeButton => Driver.FindElement(By.Id("rememberme-checkbox"));
+        public IWebElement ForgotPasswordLink => Driver.FindElement(By.Id("forgot-password-link"));
 
         // navbar elements
-        public IWebElement Navbar1 => WebDriver.Driver.FindElement(By.CssSelector("#navbar1"));
-        public IWebElement Navbar2 => WebDriver.Driver.FindElement(By.CssSelector("#navbar2"));
+        public IWebElement Navbar1 => Driver.FindElement(By.CssSelector("#navbar1"));
+        public IWebElement Navbar2 => Driver.FindElement(By.CssSelector("#navbar2"));
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-namespace Helper.Library
+namespace Helper.Library.Domain
 {
-    public class N1Child2 : BasePage
+    public class N1Child2 : Browser
     {
         public N1Child2(LoginPage loginPage)
         {
@@ -17,6 +17,6 @@ namespace Helper.Library
 
 
 
-        public IWebElement Child2WebElement => WebDriver.Driver.FindElement(By.LinkText("Child2"));
+        public IWebElement Child2WebElement => Driver.FindElement(By.LinkText("Child2"));
     }
 }

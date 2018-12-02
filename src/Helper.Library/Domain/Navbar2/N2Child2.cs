@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-namespace Helper.Library
+namespace Helper.Library.Domain
 {
-    public class N2Child2 : BasePage
+    public class N2Child2 : Browser
     {
         public N2Child2(LoginPage loginPage)
         {
@@ -17,7 +17,7 @@ namespace Helper.Library
 
         private Dictionary<string, string> PopulateDictionary(Dictionary<string, string> someDictionary)
         {
-            foreach (var item in AllMultiSelectItems)
+            foreach (var item in WebElement.SomeElementList(Driver, "AllMultiSelectItems"))
             {
                 someDictionary[item.Text] = item.GetAttribute("data-offset-index");
             }
@@ -29,7 +29,7 @@ namespace Helper.Library
             Dictionary<string, string> MultiSelectItemsDictionary = new Dictionary<string, string> { };
             MultiSelectField.Click();
             PopulateDictionary(MultiSelectItemsDictionary);
-            IJavaScriptExecutor jse = (IJavaScriptExecutor)WebDriver.Driver;
+            IJavaScriptExecutor jse = (IJavaScriptExecutor)Driver;
 
             foreach (string item in items)
             {
@@ -39,9 +39,9 @@ namespace Helper.Library
             return this;
         }
 
-        public IWebElement Child2WebElement => WebDriver.Driver.FindElement(By.LinkText("Child2"));
+        public IWebElement Child2WebElement => Driver.FindElement(By.LinkText("Child2"));
 
-        public IWebElement MultiSelectField => WebDriver.Driver.FindElement(By.CssSelector("#templateForm > section:nth-child(2)"));
-        public IWebElement MultiSelectItem(string itemIndex) => WebDriver.Driver.FindElement(By.CssSelector("#msMultiSelectItem_listbox > li:nth=child(" + (int.Parse(itemIndex) + 1).ToString() + ")"));
+        public IWebElement MultiSelectField => Driver.FindElement(By.CssSelector("#templateForm > section:nth-child(2)"));
+        public IWebElement MultiSelectItem(string itemIndex) => Driver.FindElement(By.CssSelector("#msMultiSelectItem_listbox > li:nth=child(" + (int.Parse(itemIndex) + 1).ToString() + ")"));
     }
 }

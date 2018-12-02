@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Helper.Library;
-using Helper.Library.Navbar2;
 
 namespace Helper.Scripts
 {

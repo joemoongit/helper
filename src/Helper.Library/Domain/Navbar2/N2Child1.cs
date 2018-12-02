@@ -5,29 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-namespace Helper.Library.Navbar2
+namespace Helper.Library.Domain
 {
-    public class N1Child1 : BasePage
+    public class N2Child1 : Browser
     {
-        public N1Child1(LoginPage loginPage)
+        public N2Child1(LoginPage loginPage)
         {
             loginPage.Navbar2.Click();
             Child1WebElement.Click();
         }
 
-        public N1Child1 ReturnGridElements(string name)
+        public N2Child1 ReturnGridElements(string name)
         {
             int gridcellIndex = 0;
             string temporaryString = "";
             Dictionary<string, IWebElement> Dictionary = new Dictionary<string, IWebElement> { };
 
-            foreach(var item in AllGridItems)
+            foreach (var item in WebElement.SomeElementList(Driver, "AllGridItems"))
             {
-                if (IndexOfGrid(gridcellIndex, 10) == 1)        // || IndexOfGrid(gridcellIndex, 10) == 2
+                if (Utility.IndexOfGrid(gridcellIndex, 10) == 1)
                 {
                     temporaryString = item.Text;
                 }
-                else if (IndexOfGrid(gridcellIndex, 10) == 9)
+                else if (Utility.IndexOfGrid(gridcellIndex, 10) == 9)
                 {
                     Dictionary[temporaryString] = item;
                 }
@@ -43,6 +43,6 @@ namespace Helper.Library.Navbar2
             return name;
         }
 
-        public IWebElement Child1WebElement => WebDriver.Driver.FindElement(By.LinkText("Child1"));
+        public IWebElement Child1WebElement => Driver.FindElement(By.LinkText("Child1"));
     }
 }

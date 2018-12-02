@@ -13,7 +13,6 @@ namespace Helper.Library
         string Org { get; set; }
     }
 
-
     public class LoginSettings : ILoginSettings
     {
         private string userId = "admin1";
@@ -42,28 +41,28 @@ namespace Helper.Library
             userId = userIdOptional;
         }
     }
+
+    public class MyLoginSettings : LoginSettings
+    {
+        public MyLoginSettings()
+        {
+            UserId = "joseph";
+        }
+    }
 }
 
-    //public class MyLoginSettings : LoginSettings
-    //{
-    //    public MyLoginSettings()
-    //    {
-    //        UserId = "joseph";
-    //    }
-    //}
+//public class AdminSettings : LoginSettings
+//{
+//    public AdminSettings()
+//    {
+//        UserId = "admin1";
+//    }
+//}
 
-    //public class AdminSettings : LoginSettings
-    //{
-    //    public AdminSettings()
-    //    {
-    //        UserId = "admin1";
-    //    }
-    //}
-
-    //public class SuperAdminLoginSettings : LoginSettings
-    //{
-    //    public SuperAdminSettings()
-    //    {
-    //        UserId = "superadmin";
-    //    }
-    //}
+//public class SuperAdminLoginSettings : LoginSettings
+//{
+//    public SuperAdminSettings()
+//    {
+//        UserId = "superadmin";
+//    }
+//}

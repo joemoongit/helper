@@ -7,11 +7,11 @@ namespace Helper.Tests
     [TestClass]
     public class BasePageTest
     {
-        protected BasePage bpage;
+        protected Browser bpage;
         [TestInitialize]
         public void SetupTest()
         {
-            bpage = new BasePage();
+            bpage = new Browser();
         }
 
         [TestMethod]

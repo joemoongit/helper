@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
-using Helper.Library.Navbar2;
+using Helper.Library.Domain;
 
 namespace Helper.Library
 {
-    public class PostJsonToServer : BasePage
+    public class PostJsonToServer : Browser
     {
-        protected Navbar2.N1Child1 cpage;
+        protected N1Child1 cpage;
 
         public PostJsonToServer(LoginPage loginPage)
         {
-            cpage = new Navbar2.N1Child1(loginPage);
+            cpage = new N1Child1(loginPage);
         }
 
         private readonly static string JsonPost =
             @"{
                 'Key1': 'Value1',
-                'Key2: 'Value2',
+                'Key2': 'Value2',
                 'Key3': 'Value3',
                 'Key4': 'Value4',
                 'Key5': 'Value5',
@@ -52,7 +52,8 @@ namespace Helper.Library
             }
             else
             {
-                url = cpage.ReturnUrlUsingEndpointName(campaignNumberOrName.ToString());
+                //url = cpage.ReturnUrlUsingEndpointName(campaignNumberOrName.ToString());
+                url = "";
             }
 
             string Post;
@@ -71,7 +72,8 @@ namespace Helper.Library
             }
             else
             {
-                url = cpage.ReturnUrlUsingEndpointName(campaignNumberOrName.ToString());
+                //url = cpage.ReturnUrlUsingEndpointName(campaignNumberOrName.ToString());
+                url = "";
             }
 
             string Post;

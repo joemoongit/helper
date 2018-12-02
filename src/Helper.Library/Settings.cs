@@ -13,7 +13,6 @@ namespace Helper.Library
         public ILoginSettings LoginSettings;
         public IUrlSettings UrlSettings;
 
-
         public Settings()
         {
             switch (ConfigurationManager.AppSettings["environment"].ToLower())

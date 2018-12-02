@@ -6,18 +6,9 @@ using System.Threading.Tasks;
 
 namespace Helper.Library
 {
-    public abstract class Utility
+    public static class Utility
     {
-        public int IndexOf_old(int gridcellIndex)
-        {
-            if (gridcellIndex >= 10)
-            {
-                return IndexOf_old(gridcellIndex - 10);
-            }
-            return gridcellIndex;
-        }
-
-        public int IndexOfGrid(int gridcellIndex, int numberOfColumnsInGrid)
+        public static int IndexOfGrid(int gridcellIndex, int numberOfColumnsInGrid)
         {
             if(gridcellIndex >= numberOfColumnsInGrid)
             {
@@ -25,6 +16,5 @@ namespace Helper.Library
             }
             return gridcellIndex;
         }
-
     }
 }

@@ -19,31 +19,24 @@ namespace Helper.Library
 {
     public static class WebDriver
     {
-        public static IWebDriver Driver;
-
-        public static void Initialize()
+        public static IWebDriver Initialize()
         {
             switch (ConfigurationManager.AppSettings["driver"].ToLower())
             {
                 case "chrome":
-                    Driver = new ChromeDriver();
-                    break;
+                    return new ChromeDriver();
                 case "firefox":
-                    Driver = new FirefoxDriver();
-                    break;
+                    return new FirefoxDriver();
                 case "ie":
-                    Driver = new InternetExplorerDriver();
-                    break;
+                    return new InternetExplorerDriver();
                 case "edge":
-                    Driver = new EdgeDriver();
-                    break;
+                    return new EdgeDriver();
                 case "opera":
-                    Driver = new OperaDriver();
-                    break;
+                    return new OperaDriver();
                 case "safari":
-                    Driver = new SafariDriver();
-                    break;
+                    return new SafariDriver();
             }
+            return new ChromeDriver();
         }
 
         public static IWebElement FindElement(this IWebDriver driver, By by, int timeoutInSeconds)

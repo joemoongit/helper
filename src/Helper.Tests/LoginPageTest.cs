@@ -33,7 +33,7 @@ namespace Helper.Tests
             for (var i = 0; i<5; i++)
             {
                 page.LoginAs("wrongUserId", "wrongPassword");
-                WebDriver.WaitUntilElementIsVisible(WebDriver.Driver, By.TagName("li"), 5);
+                //WebDriver.WaitUntilElementIsVisible(page.Driver, By.TagName("li"), 5);
                 Assert.IsTrue(page.LoginFailMessage.Displayed);
             }
             Assert.IsTrue(page.Recaptcha.Displayed);
