@@ -28,8 +28,6 @@ namespace Helper.Scripts
             fb.Login("userId", "pw");
             gmail.Login("userId", "pw");
             packtpub.Login("userId", "pw");
-
-
         }
 
         [TestCleanup]

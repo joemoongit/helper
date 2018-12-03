@@ -9,31 +9,47 @@ namespace Helper.Library
 {
     public class Settings
     {
-        public IPageSettings EnvSettings;
-        public ILoginSettings LoginSettings;
-        public IUrlSettings UrlSettings;
-
         public Settings()
         {
-            switch (ConfigurationManager.AppSettings["environment"].ToLower())
+            //EnvSettings();
+            //LoginSettings();
+            //UrlSettings();
+        }
+
+        public string UserId
+        {
+            get => LoginSettings.UserId + "@" + EnvSettings.OrgPrefix + LoginSettings.Org + ".com";
+        }
+
+        public IPageSettings EnvSettings
+        {
+            get
             {
-                case "qa":
-                    this.EnvSettings = new QaSettings();
-                    break;
-                case "stg":
-                    this.EnvSettings = new StagingSettings();
-                    break;
-                case "dev":
-                    this.EnvSettings = new DevSettings();
-                    break;
-                case "prod":
-                    this.EnvSettings = new ProdSettings();
-                    break;
-                case "local":
-                    this.EnvSettings = new LocalSettings();
-                    break;
+                switch (ConfigurationManager.AppSettings["environment"].ToLower())
+                {
+                    case "qa":
+                        return new QaSettings();
+                    case "stg":
+                        return new StagingSettings();
+                    case "dev":
+                        return new DevSettings();
+                    case "prod":
+                        return new ProdSettings();
+                    case "local":
+                        return new LocalSettings();
+                }
+                return null;
             }
-            this.LoginSettings = new LoginSettings();
+        }
+
+        public ILoginSettings LoginSettings
+        {
+            get => new LoginSettings();
+        }
+
+        public IUrlSettings UrlSettings
+        {
+            get => new UrlSettings();
         }
     }
 }

@@ -8,18 +8,18 @@ namespace Helper.Tests
     [TestClass]
     public class PostJsonToServerTest
     {
-        protected LoginPage page;
-        protected LoginPage page2;
-        protected LoginPage page3;
+        protected LoginPageOld page;
+        protected LoginPageOld page2;
+        protected LoginPageOld page3;
 
         protected PostJsonToServer post;
 
         [TestInitialize]
         public async Task SetupTest()
         {
-            page = new LoginPage();
-            page2 = new LoginPage();
-            page3 = new LoginPage();
+            page = new LoginPageOld();
+            page2 = new LoginPageOld();
+            page3 = new LoginPageOld();
             post = new PostJsonToServer(page);
             await post.PostToCampaign(10154, 3);
         }

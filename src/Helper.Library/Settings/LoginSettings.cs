@@ -35,11 +35,6 @@ namespace Helper.Library
             get => org;
             set => org = value;
         }
-
-        public LoginSettings(string userIdOptional = null)
-        {
-            userId = userIdOptional;
-        }
     }
 
     public class MyLoginSettings : LoginSettings
@@ -47,6 +42,15 @@ namespace Helper.Library
         public MyLoginSettings()
         {
             UserId = "joseph";
+        }
+    }
+
+    public class FacebookLoginSettings : LoginSettings
+    {
+        public FacebookLoginSettings()
+        {
+            UserId = "FB user id";
+            Password = "FB pw";
         }
     }
 }

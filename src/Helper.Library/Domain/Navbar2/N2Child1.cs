@@ -9,7 +9,7 @@ namespace Helper.Library.Domain
 {
     public class N2Child1 : Browser
     {
-        public N2Child1(LoginPage loginPage)
+        public N2Child1(Library.LoginPageOld loginPage)
         {
             loginPage.Navbar2.Click();
             Child1WebElement.Click();
@@ -21,7 +21,7 @@ namespace Helper.Library.Domain
             string temporaryString = "";
             Dictionary<string, IWebElement> Dictionary = new Dictionary<string, IWebElement> { };
 
-            foreach (var item in WebElement.SomeElementList(Driver, "AllGridItems"))
+            foreach (var item in WebDriver.FindElements(Driver, By.TagName("td")))
             {
                 if (Utility.IndexOfGrid(gridcellIndex, 10) == 1)
                 {

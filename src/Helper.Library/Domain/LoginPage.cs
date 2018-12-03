@@ -3,32 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
 using OpenQA.Selenium;
 
-namespace Helper.Library
+namespace Helper.Library.Domain
 {
     public class LoginPage : Browser
     {
-        public LoginPage(string userId = null, string password = null)
+        public LoginPage()
         {
-            WebDriver.Initialize();
-            NavigateTo(Settings.EnvSettings.UrlPrefix + ".josephmoon.com/Login");
-            if (userId == null && password == null)
-            {
-                LoginAs(Settings.LoginSettings.UserId + "@" + Settings.EnvSettings.OrgPrefix + Settings.LoginSettings.Org + ".com", Settings.LoginSettings.Password + Settings.EnvSettings.PasswordSuffix);
-            }
-            else if (userId == null || password == null)
-            {
-                Debug.WriteLine("Login Failed");
-            }
-            else
-            {
-                LoginAs(userId, password);
-            }
+            NavigateTo("https://www.domain.com");
         }
 
-        public LoginPage LoginAs(string userId, string password)
+        public LoginPage Login(string userId, string password)
         {
             LoginField.Click();
             LoginField.SendKeys(userId);
@@ -38,16 +24,12 @@ namespace Helper.Library
             return this;
         }
 
-        public Settings ReturnSettings()
-        {
-            return Settings;
-        }
-
-        // login page elements
+        //login page elements
         public IWebElement LoginField => Driver.FindElement(By.Id("login"));
+        public IWebElement LoginFieldWithWait => WebDriver.WaitUntilElementIsVisible(Driver, By.Id("login"), 5);
         public IWebElement PasswordField => Driver.FindElement(By.Id("password"));
-        public IWebElement LoginButton => Driver.FindElement(By.Id("login-btn"));
-
+        public IWebElement LoginButton => Driver.FindElement(By.Id("login-button"));
+        
         public IWebElement CompanyLogo => Driver.FindElement(By.Id("company-logo"));
         public IWebElement Recaptcha => Driver.FindElement(By.Id("reCaptcha"));
         public IWebElement LoginFailMessage => Driver.FindElement(By.TagName("li"));

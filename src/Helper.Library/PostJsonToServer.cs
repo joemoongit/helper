@@ -12,7 +12,7 @@ namespace Helper.Library
     {
         protected N1Child1 cpage;
 
-        public PostJsonToServer(LoginPage loginPage)
+        public PostJsonToServer(LoginPageOld loginPage)
         {
             cpage = new N1Child1(loginPage);
         }

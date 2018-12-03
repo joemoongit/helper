@@ -8,12 +8,12 @@ namespace Helper.Tests
     [TestClass]
     public class LoginPageTest
     {
-        protected LoginPage page;
+        protected LoginPageOld page;
 
         [TestInitialize]
         public void SetupTest()
         {
-            page = new LoginPage("to test Login page");
+            page = new LoginPageOld("to test Login page");
         }
 
         [TestMethod]

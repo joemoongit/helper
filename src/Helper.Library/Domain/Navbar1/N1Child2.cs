@@ -9,7 +9,7 @@ namespace Helper.Library.Domain
 {
     public class N1Child2 : Browser
     {
-        public N1Child2(LoginPage loginPage)
+        public N1Child2(Library.LoginPageOld loginPage)
         {
             loginPage.Navbar1.Click();
             Child2WebElement.Click();

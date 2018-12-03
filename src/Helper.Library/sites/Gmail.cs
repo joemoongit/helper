@@ -19,7 +19,6 @@ namespace Helper.Library.sites
             LoginField.Click();
             LoginField.SendKeys(userId);
             LoginFieldNext.Click();
-            Driver.WaitUntilElementIsVisible(By.CssSelector("input[type='password']"), 5);
             PasswordField.Click();
             PasswordField.SendKeys(password);
             PasswordFieldNext.Click();
@@ -31,8 +30,7 @@ namespace Helper.Library.sites
 
         public IWebElement LoginField => Driver.FindElement(By.Id("identifierId"));
         public IWebElement LoginFieldNext => Driver.FindElement(By.Id("identifierNext"));
-        //public IWebElement PasswordField => Driver.FindElement(By.Id("password"));
-        public IWebElement PasswordField => Driver.FindElement(By.CssSelector("input[type='password']"));
+        public IWebElement PasswordField => WebDriver.WaitUntilElementIsVisible(Driver, By.CssSelector("input[type='password']"), 5);
         public IWebElement PasswordFieldNext => Driver.FindElement(By.Id("passwordNext"));
     }
 }

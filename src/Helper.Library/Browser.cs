@@ -93,6 +93,7 @@ namespace Helper.Library
             return this;
         }
 
+
         public IWebElement PostVerificationAlertButton => Driver.FindElement(By.CssSelector("#wrapper > div.navbar-default.yamm.ins-navbar > div > div > div:nth-child{2} > ul > li:nth-child(@) > ins-distribute-all > div"));
         public IWebElement ToasterPopup => Driver.FindElement(By.CssSelector("#toast-container > div"));
         public IWebElement SecondToasterPopup => Driver.FindElement(By.CssSelector("#toast-container > div:nth-child(2)"));

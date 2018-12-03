@@ -9,7 +9,7 @@ namespace Helper.Library.Domain
 {
     public class N2Child2 : Browser
     {
-        public N2Child2(LoginPage loginPage)
+        public N2Child2(Library.LoginPageOld loginPage)
         {
             loginPage.Navbar1.Click();
             Child2WebElement.Click();
@@ -17,7 +17,7 @@ namespace Helper.Library.Domain
 
         private Dictionary<string, string> PopulateDictionary(Dictionary<string, string> someDictionary)
         {
-            foreach (var item in WebElement.SomeElementList(Driver, "AllMultiSelectItems"))
+            foreach (var item in WebDriver.FindElements(Driver, By.ClassName("k-item")))
             {
                 someDictionary[item.Text] = item.GetAttribute("data-offset-index");
             }

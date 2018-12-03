@@ -7,14 +7,14 @@ namespace Helper.Scripts
     [TestClass]
     public class Script
     {
-        protected LoginPage page;
-        protected LoginPage page2;
-        protected LoginPage page3;
+        protected LoginPageOld page;
+        protected LoginPageOld page2;
+        protected LoginPageOld page3;
 
         [TestInitialize]
         public void SetupTest()
         {
-            page = new LoginPage();
+            page = new LoginPageOld();
         }
 
         [TestMethod]

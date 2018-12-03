@@ -28,7 +28,7 @@ namespace Helper.Library
                 case "firefox":
                     return new FirefoxDriver();
                 case "ie":
-                    return new InternetExplorerDriver();
+                    return new InternetExplorerDriver(); 
                 case "edge":
                     return new EdgeDriver();
                 case "opera":
@@ -36,10 +36,10 @@ namespace Helper.Library
                 case "safari":
                     return new SafariDriver();
             }
-            return new ChromeDriver();
+            return null;
         }
 
-        public static IWebElement FindElement(this IWebDriver driver, By by, int timeoutInSeconds)
+        public static IWebElement FindElement(this IWebDriver driver, By by, int timeoutInSeconds = 0)
         {
             if (timeoutInSeconds > 0)
             {
@@ -49,7 +49,7 @@ namespace Helper.Library
             return driver.FindElement(by);
         }
 
-        public static IReadOnlyCollection<IWebElement> FindElements(this IWebDriver driver, By by, int timeoutInSeconds)
+        public static IReadOnlyCollection<IWebElement> FindElements(this IWebDriver driver, By by, int timeoutInSeconds = 0)
         {
             if (timeoutInSeconds > 0)
             {
@@ -59,7 +59,7 @@ namespace Helper.Library
             return driver.FindElements(by);
         }
 
-        public static IWebElement WaitUntilElementIsVisible(this IWebDriver driver, By by, int timeoutInSeconds)
+        public static IWebElement WaitUntilElementIsVisible(this IWebDriver driver, By by, int timeoutInSeconds = 0)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
             return wait.Until(ExpectedConditions.ElementIsVisible(by));
