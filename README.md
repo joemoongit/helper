@@ -1,2 +1,5 @@
 # helper
-Web UI Library using Selenium WebDriver
+
+Automated GitHub, Facebook, Gmail, Packtpub login
+
+Refer to src/Helper.Scripts.Script2.cs
