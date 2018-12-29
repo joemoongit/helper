@@ -5,27 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-namespace Helper.Library.sites
+namespace Helper.Library.Sites
 {
-    public class Packtpub : Browser
+    public class Packtpub : BrowserV2
     {
         public Packtpub()
         {
-            NavigateTo("https://www.packtpub.com/login");
+            Initalize();
+            Settings = new PacktpubSettings();
+            NavigateTo(Url);
         }
-
-        public Packtpub Login(string userId, string password)
+        
+        public Packtpub Login()
         {
-            LoginField.Click();
-            LoginField.SendKeys(userId);
-            PasswordField.Click();
-            PasswordField.SendKeys(password);
-            ((IJavaScriptExecutor)Driver).ExecuteScript("arguments[0].click();", LoginButton);
+            var Elements = new PacktpubLoginElements(Driver);
+            Service.Login(this, Elements);
             return this;
         }
- 
-        public IWebElement LoginField => Driver.FindElement(By.Id("edit-name"));
-        public IWebElement PasswordField => Driver.FindElement(By.Id("edit-pass"));
-        public IWebElement LoginButton => Driver.FindElement(By.Id("edit-post-form"));
+    }
+
+    public class PacktpubLoginElements : LoginElements
+    {
+        public PacktpubLoginElements(IWebDriver driver)
+        {
+            Driver = driver;
+            By1 = By.Id("edit-name");
+            By2 = By.Id("edit-pass");
+            By3 = By.Id("edit-post-form");
+        }
     }
 }

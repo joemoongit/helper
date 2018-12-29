@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Helper.Library.sites;
+using Helper.Library.Sites;
 
 namespace Helper.Scripts
 {
     [TestClass]
-    public class Script2
+    public class LoginScript
     {
         protected Facebook fb;
         protected Github github;
@@ -24,15 +24,15 @@ namespace Helper.Scripts
         [TestMethod]
         public void TestSites()
         {
-            github.Login("userId", "pw");
-            fb.Login("userId", "pw");
-            gmail.Login("userId", "pw");
-            packtpub.Login("userId", "pw");
+            github.Login();
+            fb.Login();
+            gmail.Login();
+            packtpub.Login();
         }
 
         [TestCleanup]
         public void TeardownTest()
-        {
+         {
             fb.Quit();
             github.Quit();
             gmail.Quit();

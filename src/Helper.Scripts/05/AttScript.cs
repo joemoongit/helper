@@ -1,29 +1,30 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Helper.Library;
+using Helper.Library.Sites;
 
-namespace Helper.Tests
+namespace Helper.Scripts.OtherSites
 {
     [TestClass]
-    public class BasePageTest
+    public class AttScript
     {
-        protected Browser bpage;
+        protected Att a;
+
         [TestInitialize]
         public void SetupTest()
         {
-            bpage = new Browser();
+            a = new Att();
         }
 
         [TestMethod]
-        public void TestOpenNewTab()
+        public void TestMethod1()
         {
-            bpage.OpenNewTab("https://www.google.com");
+            a.Login();
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            bpage.Quit();
+            a.Quit();
         }
     }
 }

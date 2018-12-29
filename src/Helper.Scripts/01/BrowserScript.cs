@@ -5,16 +5,14 @@ using Helper.Library;
 namespace Helper.Scripts
 {
     [TestClass]
-    public class Script
+    public class BrowserScript
     {
-        protected LoginPageOld page;
-        protected LoginPageOld page2;
-        protected LoginPageOld page3;
+        protected Browser page;
 
         [TestInitialize]
         public void SetupTest()
         {
-            page = new LoginPageOld();
+            page = new Browser();
         }
 
         [TestMethod]

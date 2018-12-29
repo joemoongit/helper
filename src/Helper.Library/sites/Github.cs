@@ -5,27 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-namespace Helper.Library.sites
+namespace Helper.Library.Sites
 {
-    public class Github : Browser
+    public class Github : BrowserV2
     {
         public Github()
         {
-            NavigateTo("https://github.com/login");
+            Initalize();
+            Settings = new GithubSettings();
+            NavigateTo(Url);
         }
-
-        public Github Login(string userId, string password)
+       
+        public Github Login()
         {
-            LoginField.Click();
-            LoginField.SendKeys(userId);
-            PasswordField.Click();
-            PasswordField.SendKeys(password);
-            LoginButton.Click();
+            var Elements = new GithubLoginElements(Driver);
+            Service.Login(this, Elements);
             return this;
         }
+    }
 
-        public IWebElement LoginField => Driver.FindElement(By.Id("login_field"));
-        public IWebElement PasswordField => Driver.FindElement(By.Id("password"));
-        public IWebElement LoginButton => Driver.FindElement(By.CssSelector("#login > form > div.auth-form-body.mt-3 > input.btn.btn-primary.btn-block"));
+    public class GithubLoginElements : LoginElements
+    {
+        public GithubLoginElements(IWebDriver driver)
+        {
+            Driver = driver;
+            By1 = By.Id("login_field");
+            By2 = By.Id("password");
+            By3 = By.CssSelector("#login > form > div.auth-form-body.mt-3 > input.btn.btn-primary.btn-block");
+        }
     }
 }

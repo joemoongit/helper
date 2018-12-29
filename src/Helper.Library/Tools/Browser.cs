@@ -5,17 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 
-
 namespace Helper.Library
 {
     public class Browser
     {
-        protected Settings Settings;
+        protected ISettings Settings;
         protected IWebDriver Driver;
 
         public Browser()
         {
-            Driver = WebDriver.Initialize();
+            Driver = WebDriver.Driver();
         }
 
         public Browser NavigateTo(string url)
@@ -36,30 +35,32 @@ namespace Helper.Library
             return this;
         }
 
-        public Browser ConfigureLoginSettings(string userId = null, string password = null, string org = null)     //needed?
+        public IWebDriver webDriver()
         {
-            if (userId != null)
-            {
-                Settings.LoginSettings.UserId = userId;
-            }
-            else if (password != null)
-            {
-                Settings.LoginSettings.Password = password;
-            }
-            else if (org != null)
-            {
-                Settings.LoginSettings.Org = org;
-            }
-            return this;
+            return Driver;
         }
 
-        //WIP
+        public string Url
+        {
+            get => Settings.Url;
+        }
+
+        public string UserId
+        {
+            get => Settings.UserId;
+        }
+
+        public string Password
+        {
+            get => Settings.Password;
+        }
+
         public Browser OpenNewTab(string url)
         {
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.open()");
             List<string> tabs = new List<string>(Driver.WindowHandles);
             System.Diagnostics.Debug.WriteLine(tabs);
-            Driver.SwitchTo().Window(tabs[1]);
+            Driver.SwitchTo().Window(tabs[tabs.Count - 1]);
             Driver.Navigate().GoToUrl(url);
             return this;
         }
@@ -86,16 +87,11 @@ namespace Helper.Library
             return this;
         }
 
-        public Browser DuplicatePage()
+        public Browser DuplicatePage()              //use send keys??
         {
-            var urlBuilder = new UrlBuilder(Settings);
-            Driver.Navigate().GoToUrl(urlBuilder.ReturnUrl());
+            //var urlBuilder = new UrlBuilder(Settings);
+            //Driver.Navigate().GoToUrl(urlBuilder.ReturnUrl());
             return this;
         }
-
-
-        public IWebElement PostVerificationAlertButton => Driver.FindElement(By.CssSelector("#wrapper > div.navbar-default.yamm.ins-navbar > div > div > div:nth-child{2} > ul > li:nth-child(@) > ins-distribute-all > div"));
-        public IWebElement ToasterPopup => Driver.FindElement(By.CssSelector("#toast-container > div"));
-        public IWebElement SecondToasterPopup => Driver.FindElement(By.CssSelector("#toast-container > div:nth-child(2)"));
     }
 }

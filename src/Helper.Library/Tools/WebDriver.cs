@@ -14,17 +14,21 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Opera;
 using OpenQA.Selenium.Safari;
 
-
 namespace Helper.Library
 {
     public static class WebDriver
     {
-        public static IWebDriver Initialize()
+        public static IWebDriver Driver()
         {
             switch (ConfigurationManager.AppSettings["driver"].ToLower())
             {
+                case "c":
                 case "chrome":
-                    return new ChromeDriver();
+                    ChromeOptions options = new ChromeOptions();
+                    options.AddArguments("--disable-notifications");
+                    return new ChromeDriver(options);
+                case "f":
+                case "ff":
                 case "firefox":
                     return new FirefoxDriver();
                 case "ie":
@@ -36,10 +40,10 @@ namespace Helper.Library
                 case "safari":
                     return new SafariDriver();
             }
-            return null;
+            return new ChromeDriver();
         }
 
-        public static IWebElement FindElement(this IWebDriver driver, By by, int timeoutInSeconds = 0)
+        public static IWebElement FindElement(IWebDriver driver, By by, int timeoutInSeconds = 0)
         {
             if (timeoutInSeconds > 0)
             {
@@ -49,7 +53,7 @@ namespace Helper.Library
             return driver.FindElement(by);
         }
 
-        public static IReadOnlyCollection<IWebElement> FindElements(this IWebDriver driver, By by, int timeoutInSeconds = 0)
+        public static IReadOnlyCollection<IWebElement> FindElements(IWebDriver driver, By by, int timeoutInSeconds = 0)
         {
             if (timeoutInSeconds > 0)
             {
@@ -59,7 +63,7 @@ namespace Helper.Library
             return driver.FindElements(by);
         }
 
-        public static IWebElement WaitUntilElementIsVisible(this IWebDriver driver, By by, int timeoutInSeconds = 0)
+        public static IWebElement WaitUntilElementIsVisible(IWebDriver driver, By by, int timeoutInSeconds = 0)
         {
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
             return wait.Until(ExpectedConditions.ElementIsVisible(by));

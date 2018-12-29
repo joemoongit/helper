@@ -51,32 +51,74 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Browser.cs" />
-    <Compile Include="Domain\LoginPage.cs" />
-    <Compile Include="Domain\LoginPageOld.cs" />
-    <Compile Include="Domain\Navbar1\N1Child1.cs" />
-    <Compile Include="Domain\Navbar1\N1Child2.cs" />
-    <Compile Include="Domain\Navbar2\N2Child1.cs" />
-    <Compile Include="Domain\Navbar2\N2Child2.cs" />
-    <Compile Include="Facebook\Navbar1\Navbar1.cs" />
-    <Compile Include="PostJsonToServer.cs" />
+    <Compile Include="acc\investments\Webull.cs" />
+    <Compile Include="acc\mobile\Gasbuddy.cs" />
+    <Compile Include="acc\liabilities\Paychex.cs" />
+    <Compile Include="acc\mobile\Mcdonalds.cs" />
+    <Compile Include="acc\retail\Amazon.cs" />
+    <Compile Include="acc\retail\Ebay.cs" />
+    <Compile Include="acc\mobile\Samsung.cs" />
+    <Compile Include="acc\retail\Starbucks.cs" />
+    <Compile Include="acc\retail\Walgreens.cs" />
+    <Compile Include="acc\retail\Walmart.cs" />
+    <Compile Include="Tools\BrowserV3.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Settings\SettingsV2.cs" />
+    <Compile Include="Sites\Youtube.cs" />
+    <Compile Include="zRecycleBin\InsellerateLoginPage.cs" />
+    <Compile Include="Tools\BrowserV2.cs" />
+    <Compile Include="Tools\Browser.cs" />
+    <Compile Include="Settings\Registry.cs" />
+    <Compile Include="Sites\Fb\FbAccountSettings.cs" />
+    <Compile Include="Sites\Fb\FbPost.cs" />
+    <Compile Include="Sites\Fb\FbProfilePage.cs" />
+    <Compile Include="LoginService\Service.cs" />
+    <Compile Include="zRecycleBin\PostJsonToServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="Settings\LoginSettings.cs" />
-    <Compile Include="Settings\PageSettings.cs" />
-    <Compile Include="Settings\UrlSettings.cs" />
-    <Compile Include="Facebook\Login.cs" />
-    <Compile Include="sites\Github.cs" />
-    <Compile Include="sites\Gmail.cs" />
-    <Compile Include="sites\Packtpub.cs" />
-    <Compile Include="UrlBuilder.cs" />
-    <Compile Include="Utility.cs" />
-    <Compile Include="WebDriver.cs" />
-    <Compile Include="WebElement.cs" />
+    <Compile Include="zRecycleBin\Settings\Settings.cs" />
+    <Compile Include="zRecycleBin\Settings\ISettings\LoginSettings.cs" />
+    <Compile Include="zRecycleBin\Settings\ISettings\PageSettings.cs" />
+    <Compile Include="zRecycleBin\Settings\ISettings\UrlSettings.cs" />
+    <Compile Include="Sites\Facebook.cs" />
+    <Compile Include="Sites\Github.cs" />
+    <Compile Include="Sites\Gmail.cs" />
+    <Compile Include="Sites\Gmail\GoogleAccountSettings.cs" />
+    <Compile Include="Sites\Gmail\GoogleDrive.cs" />
+    <Compile Include="Sites\Gmail\GooglePhotos.cs" />
+    <Compile Include="Sites\Packtpub.cs" />
+    <Compile Include="Sites\Pcc.cs" />
+    <Compile Include="Sites\Pcc\AddClasses.cs" />
+    <Compile Include="Sites\Pcc\ScheduleOfClasses.cs" />
+    <Compile Include="Sites\Pcc\Transcript.cs" />
+    <Compile Include="acc\investments\Coinbase.cs" />
+    <Compile Include="acc\investments\Iowa529.cs" />
+    <Compile Include="acc\liabilities\Allstate.cs" />
+    <Compile Include="acc\liabilities\content\Directvnow.cs" />
+    <Compile Include="acc\liabilities\data\Att.cs" />
+    <Compile Include="acc\liabilities\Fedloan.cs" />
+    <Compile Include="acc\banks\Amex.cs" />
+    <Compile Include="acc\banks\Boa.cs" />
+    <Compile Include="acc\banks\Citi.cs" />
+    <Compile Include="acc\investments\Robinhood.cs" />
+    <Compile Include="acc\investments\Vanguard.cs" />
+    <Compile Include="acc\banks\WellsFargo.cs" />
+    <Compile Include="acc\liabilities\Nissan.cs" />
+    <Compile Include="acc\liabilities\data\Tmobile.cs" />
+    <Compile Include="acc\liabilities\Toyota.cs" />
+    <Compile Include="acc\other\Coupons.cs" />
+    <Compile Include="acc\other\Giftcards.cs" />
+    <Compile Include="acc\other\Legos.cs" />
+    <Compile Include="acc\other\Wishlist.cs" />
+    <Compile Include="acc\other\Workstation.cs" />
+    <Compile Include="zRecycleBin\UrlBuilder.cs" />
+    <Compile Include="zRecycleBin\Utility.cs" />
+    <Compile Include="Tools\WebDriver.cs" />
+    <Compile Include="LoginService\LoginElements.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Selenium.WebDriver.ChromeDriver.2.44.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('packages\Selenium.WebDriver.ChromeDriver.2.44.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -84,5 +126,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Selenium.WebDriver.ChromeDriver.2.44.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.ChromeDriver.2.44.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('packages\Selenium.WebDriver.MicrosoftDriver.17.17134.0\build\Selenium.WebDriver.MicrosoftDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.MicrosoftDriver.17.17134.0\build\Selenium.WebDriver.MicrosoftDriver.targets'))" />
+    <Error Condition="!Exists('packages\Selenium.WebDriver.GeckoDriver.0.23.0.3\build\Selenium.WebDriver.GeckoDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Selenium.WebDriver.GeckoDriver.0.23.0.3\build\Selenium.WebDriver.GeckoDriver.targets'))" />
   </Target>
+  <Import Project="packages\Selenium.WebDriver.MicrosoftDriver.17.17134.0\build\Selenium.WebDriver.MicrosoftDriver.targets" Condition="Exists('packages\Selenium.WebDriver.MicrosoftDriver.17.17134.0\build\Selenium.WebDriver.MicrosoftDriver.targets')" />
+  <Import Project="packages\Selenium.WebDriver.GeckoDriver.0.23.0.3\build\Selenium.WebDriver.GeckoDriver.targets" Condition="Exists('packages\Selenium.WebDriver.GeckoDriver.0.23.0.3\build\Selenium.WebDriver.GeckoDriver.targets')" />
 </Project>

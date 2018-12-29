@@ -49,9 +49,24 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="02\GmailScript.cs" />
+    <Compile Include="02\FbScript.cs" />
+    <Compile Include="03\CitiScript.cs" />
+    <Compile Include="03\BoaScript.cs" />
+    <Compile Include="03\AmexScript.cs" />
+    <Compile Include="05\AllstateScript.cs" />
+    <Compile Include="05\AllstateScript2.cs" />
+    <Compile Include="05\TmobileScript.cs" />
+    <Compile Include="05\NissanScript.cs" />
+    <Compile Include="05\ToyotaScript.cs" />
+    <Compile Include="05\DirectvnowScript.cs" />
+    <Compile Include="05\AttScript.cs" />
+    <Compile Include="05\McdonaldsScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Script.cs" />
-    <Compile Include="Script2.cs" />
+    <Compile Include="01\BrowserScript.cs" />
+    <Compile Include="02\LoginScript.cs" />
+    <Compile Include="03\WfScript.cs" />
+    <Compile Include="04\FbPhotoScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -63,6 +78,7 @@
       <Name>Helper.Library</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
