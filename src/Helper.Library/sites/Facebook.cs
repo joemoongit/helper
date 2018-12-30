@@ -86,7 +86,7 @@ namespace Helper.Library.Sites
         public IList<IWebElement> AllPhotos => Driver.FindElements(By.TagName("i"));
     }
 
-    public class FacebookCreate : Facebook
+    public class FacebookCreate : BrowserV2
     {
 
     }

@@ -8,13 +8,13 @@ namespace Helper.Scripts
     public class FbPhotoScript
     {
         protected Facebook fb;
-        protected FbProfilePage navbar;
+        protected FacebookProfilePage navbar;
 
         [TestInitialize]
         public void SetupTest()
         {
             fb = new Facebook();
-            navbar = new FbProfilePage(fb);
+            navbar = new FacebookProfilePage(fb);
         }
 
         [TestMethod]

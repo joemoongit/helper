@@ -49,7 +49,7 @@ namespace Helper.Library
         public string UserId
         {
             get => Settings.UserId;
-            set => Settings.Password = value;
+            set => Settings.UserId = value;
         }
 
         public string Password

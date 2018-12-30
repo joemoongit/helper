@@ -68,10 +68,7 @@
     <Compile Include="zRecycleBin\InsellerateLoginPage.cs" />
     <Compile Include="Tools\BrowserV2.cs" />
     <Compile Include="Tools\Browser.cs" />
-    <Compile Include="Settings\Registry.cs" />
-    <Compile Include="Sites\Fb\FbAccountSettings.cs" />
-    <Compile Include="Sites\Fb\FbPost.cs" />
-    <Compile Include="Sites\Fb\FbProfilePage.cs" />
+    <Compile Include="Registry\Registry.cs" />
     <Compile Include="LoginService\Service.cs" />
     <Compile Include="zRecycleBin\PostJsonToServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,14 +79,8 @@
     <Compile Include="Sites\Facebook.cs" />
     <Compile Include="Sites\Github.cs" />
     <Compile Include="Sites\Gmail.cs" />
-    <Compile Include="Sites\Gmail\GoogleAccountSettings.cs" />
-    <Compile Include="Sites\Gmail\GoogleDrive.cs" />
-    <Compile Include="Sites\Gmail\GooglePhotos.cs" />
     <Compile Include="Sites\Packtpub.cs" />
     <Compile Include="Sites\Pcc.cs" />
-    <Compile Include="Sites\Pcc\AddClasses.cs" />
-    <Compile Include="Sites\Pcc\ScheduleOfClasses.cs" />
-    <Compile Include="Sites\Pcc\Transcript.cs" />
     <Compile Include="acc\investments\Coinbase.cs" />
     <Compile Include="acc\investments\Iowa529.cs" />
     <Compile Include="acc\liabilities\Allstate.cs" />

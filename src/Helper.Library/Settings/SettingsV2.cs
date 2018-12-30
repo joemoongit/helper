@@ -16,22 +16,26 @@ namespace Helper.Library
     //template
     public abstract class SettingsV2 : ISettingsV2
     {
+        private string url = "url";
+        private string userId = "defaultUserId";
+        private string password = "defaultPassword";
+
         public string Url
         {
-            get => "Url";
-            set => Url = value;
+            get => url;
+            set => url = value;
         }
 
         public string UserId
         {
-            get => "UserId";
-            set => UserId = value;
+            get => userId;
+            set => userId = value;
         }
 
         public string Password
         {
-            get => "Password";
-            set => Password = value;
+            get => password;
+            set => password = value;
         }
     }
 }

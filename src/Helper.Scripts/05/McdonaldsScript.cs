@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Helper.Library.Sites;
 
-namespace Helper.Scripts._05
+namespace Helper.Scripts.OtherSites
 {
     [TestClass]
     public class McdonaldsScript

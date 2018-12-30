@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Helper.Library;
+using Helper.Library.zRecycleBin;
 using System.Threading.Tasks;
 
 namespace Helper.Tests
@@ -8,18 +8,18 @@ namespace Helper.Tests
     [TestClass]
     public class PostJsonToServerTest
     {
-        protected LoginPageOld page;
-        protected LoginPageOld page2;
-        protected LoginPageOld page3;
+        protected LoginPage page;
+        protected LoginPage page2;
+        protected LoginPage page3;
 
         protected PostJsonToServer post;
 
         [TestInitialize]
         public async Task SetupTest()
         {
-            page = new LoginPageOld();
-            page2 = new LoginPageOld();
-            page3 = new LoginPageOld();
+            page = new LoginPage();
+            page2 = new LoginPage();
+            page3 = new LoginPage();
             post = new PostJsonToServer(page);
             await post.PostToCampaign(10154, 3);
         }
@@ -27,9 +27,9 @@ namespace Helper.Tests
         [TestMethod]
         public void AssertAlertButtonEnabled()
         {
-            Assert.IsTrue(page.PostVerificationAlertButton.Enabled);
-            Assert.IsTrue(page2.PostVerificationAlertButton.Enabled);
-            Assert.IsTrue(page3.PostVerificationAlertButton.Enabled);
+            Assert.IsTrue(page.PostVerificationToaster.Enabled);
+            Assert.IsTrue(page2.PostVerificationToaster.Enabled);
+            Assert.IsTrue(page3.PostVerificationToaster.Enabled);
         }
 
         [TestCleanup]

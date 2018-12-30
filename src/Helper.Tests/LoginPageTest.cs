@@ -1,19 +1,20 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Helper.Library;
+using Helper.Library.zRecycleBin;
 using OpenQA.Selenium;
+using Helper.Library;
 
 namespace Helper.Tests
 {
     [TestClass]
     public class LoginPageTest
     {
-        protected LoginPageOld page;
+        protected LoginPage page;
 
         [TestInitialize]
         public void SetupTest()
         {
-            page = new LoginPageOld("to test Login page");
+            page = new LoginPage("to test Login page");
         }
 
         [TestMethod]
@@ -33,7 +34,7 @@ namespace Helper.Tests
             for (var i = 0; i<5; i++)
             {
                 page.LoginAs("wrongUserId", "wrongPassword");
-                //WebDriver.WaitUntilElementIsVisible(page.Driver, By.TagName("li"), 5);
+                WebDriver.WaitUntilElementIsVisible(page.webDriver(), By.TagName("li"), 5);
                 Assert.IsTrue(page.LoginFailMessage.Displayed);
             }
             Assert.IsTrue(page.Recaptcha.Displayed);

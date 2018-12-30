@@ -62,6 +62,8 @@ namespace Helper.Library.Sites
         public IList<IWebElement> AllPytorchEmails => Driver.FindElements(By.TagName("tr")).Where(email => email.Text.Contains("pytorch")).ToList();
 
         public IList<IWebElement> AllOpenshiftEmails => Driver.FindElements(By.TagName("tr")).Where(email => email.Text.Contains("openshift")).ToList();
+
+        public IList<IWebElement> FilterEmailUsingKeyword(string keyword) => Driver.FindElements(By.TagName("tr")).Where(email => email.Text.Contains(keyword)).ToList();
     }
 
     public class GmailAccountSettings : BrowserV2
@@ -84,7 +86,7 @@ namespace Helper.Library.Sites
         }
     }
 
-    public class GooglePhotos : Gmail
+    public class GooglePhotos : BrowserV2
     {
         public GooglePhotos()
         {
@@ -102,26 +104,5 @@ namespace Helper.Library.Sites
             By3 = By.Id("identifierNext");
         }
         public IWebElement PasswordNextButton => Driver.FindElement(By.Id("passwordNext"));
-    }
-
-    public class GmailSettingsV2 : ISettingsV2
-    {
-        public string Url
-        {
-            get => "https://gmail.com";
-            set => Url = value;
-        }
-
-        public string UserId
-        {
-            get => "thisisforadss";
-            set => UserId = value;
-        }
-
-        public string Password
-        {
-            get => "Sprite1234";
-            set => Password = value;
-        }
     }
 }
