@@ -7,32 +7,37 @@ namespace Helper.Scripts
     [TestClass]
     public class GmailScript
     {
-        protected Gmail g;
+        protected Gmail gmail;
 
         [TestInitialize]
         public void SetupTest()
         {
-            g = new Gmail().Login();
+            gmail = new Gmail().Login();
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            g.MarkEmailsAsRead();
-            g.LocateAllEmails();
+            gmail.MarkEmailsAsRead();
         }
 
-        protected GmailAccountSettings gmailAccountSettings;
         [TestMethod]
         public void TestMethod2()
         {
-            gmailAccountSettings = new GmailAccountSettings(g);
+            var gmailAccountSettings = new GmailAccountSettings(gmail);
+        }
+
+        [TestMethod]
+        public void TestMethod3()
+        {
+            var g = new GmailExpFeatures(gmail);
+            g.LocateAllEmails();
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            g.Quit();
+            gmail.Quit();
         }
     }
 }

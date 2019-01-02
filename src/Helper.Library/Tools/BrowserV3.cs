@@ -36,9 +36,9 @@ namespace Helper.Library
             return this;
         }
 
-        public IWebDriver webDriver()
+        public IWebDriver webDriver
         {
-            return Driver;
+            get => Driver;
         }
 
         public string Url

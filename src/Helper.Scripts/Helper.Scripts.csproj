@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="02\GmailScript.cs" />
     <Compile Include="02\FbScript.cs" />
+    <Compile Include="02\YoutubeScript.cs" />
     <Compile Include="03\CitiScript.cs" />
     <Compile Include="03\BoaScript.cs" />
     <Compile Include="03\AmexScript.cs" />

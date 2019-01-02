@@ -35,7 +35,7 @@ namespace Helper.Library
             loginElements.LoginField.Click();
             loginElements.LoginField.SendKeys(browser.UserId);
             loginElements.LoginButton.Click();
-            WebDriver.WaitUntilElementIsVisible(browser.webDriver(), loginElements.By2, 5).Click();
+            WebDriver.WaitUntilElementIsVisible(browser.webDriver, loginElements.By2, 5).Click();
             loginElements.PasswordField.SendKeys(browser.Password);
             loginElements.PasswordNextButton.Click();
             return browser;
@@ -43,6 +43,11 @@ namespace Helper.Library
 
         //WIP
         public static BrowserV2 PullStatement(BrowserV2 browser)
+        {
+            return browser;
+        }
+
+        public static BrowserV2 SchedulePayment(BrowserV2 browser)
         {
             return browser;
         }
