@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 
 namespace Helper.Library.Sites
 {
-    public class Packtpub : BrowserV2
+    public class Packtpub : Browser
     {
         public Packtpub()
         {

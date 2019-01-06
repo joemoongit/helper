@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 
 namespace Helper.Library.Sites
 {
-    public class Pcc : BrowserV2
+    public class Pcc : Browser
     {
         public Pcc()
         {

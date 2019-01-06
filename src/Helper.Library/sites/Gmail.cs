@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 
 namespace Helper.Library.Sites
 {
-    public class Gmail : BrowserV3
+    public class Gmail : BrowserV2
     {
         public Gmail(string userId = null, string password = null)
         {
@@ -39,7 +39,7 @@ namespace Helper.Library.Sites
         }
     }
 
-    public class GmailAccountSettings : BrowserV2
+    public class GmailAccountSettings : Browser
     {
         public GmailAccountSettings(Gmail g)
         {
@@ -49,7 +49,7 @@ namespace Helper.Library.Sites
         }
     }
 
-    public class GoogleDrive : BrowserV2
+    public class GoogleDrive : Browser
     {
         public GoogleDrive(Gmail g)
         {
@@ -59,7 +59,7 @@ namespace Helper.Library.Sites
         }
     }
 
-    public class GooglePhotos : BrowserV2
+    public class GooglePhotos : Browser
     {
         public GooglePhotos()
         {
@@ -67,7 +67,7 @@ namespace Helper.Library.Sites
         }
     }
 
-    public class GmailExpFeatures : BrowserV2
+    public class GmailExpFeatures : Browser
     {
         public GmailExpFeatures(Gmail gmail)
         {
@@ -97,15 +97,15 @@ namespace Helper.Library.Sites
         public IList<IWebElement> FilterEmailUsingKeyword(string keyword) => Driver.FindElements(By.TagName("tr")).Where(email => email.Text.Contains(keyword)).ToList();
     }
 
-    public class GoogleLoginElements : LoginElements
+    public class GoogleLoginElements : LoginElementsV2
     {
         public GoogleLoginElements(IWebDriver driver)
         {
             Driver = driver;
             By1 = By.XPath("//*[@id=\"identifierId\"]");
-            By2 = By.CssSelector("input[type='password']");
-            By3 = By.Id("identifierNext");
+            By2 = By.Id("identifierNext");
+            By3 = By.CssSelector("input[type='password']");
+            By4 = By.Id("passwordNext");
         }
-        public IWebElement PasswordNextButton => Driver.FindElement(By.Id("passwordNext"));
     }
 }

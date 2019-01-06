@@ -12,13 +12,13 @@ namespace Helper.Scripts.OtherSites
         [TestInitialize]
         public void SetupTest()
         {
-            a = new Att();
+            a = new Att().Login();
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            a.Login();
+            
         }
 
         [TestCleanup]

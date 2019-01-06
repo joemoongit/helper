@@ -12,13 +12,14 @@ namespace Helper.Scripts.OtherSites
         [TestInitialize]
         public void SetupTest()
         {
-            a = new Allstate();
+            a = new Allstate().Login();
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            a.Login();
+            var d = new DocumentCenter(a);
+            d.ViewMostRecentBills();
         }
 
         [TestCleanup]

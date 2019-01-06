@@ -62,7 +62,6 @@
     <Compile Include="05\ToyotaScript.cs" />
     <Compile Include="05\DirectvnowScript.cs" />
     <Compile Include="05\AttScript.cs" />
-    <Compile Include="05\McdonaldsScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="01\BrowserScript.cs" />
     <Compile Include="02\LoginScript.cs" />

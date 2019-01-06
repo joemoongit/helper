@@ -16,7 +16,7 @@ namespace Helper.Scripts
             fb = new Facebook();
             navbar = new FacebookProfilePage(fb);
         }
-
+ 
         [TestMethod]
         public void TestMethod1()
         {

@@ -9,7 +9,7 @@ namespace Helper.Library
 {
     public abstract class BrowserV2
     {
-        protected ISettings Settings;
+        protected ISettingsV2 Settings;
         protected IWebDriver Driver;
 
         public BrowserV2 Initalize()
@@ -36,9 +36,9 @@ namespace Helper.Library
             return this;
         }
 
-        public IWebDriver webDriver()
+        public IWebDriver webDriver
         {
-            return Driver;
+            get => Driver;
         }
 
         public string Url
@@ -49,11 +49,13 @@ namespace Helper.Library
         public string UserId
         {
             get => Settings.UserId;
+            set => Settings.UserId = value;
         }
 
         public string Password
         {
             get => Settings.Password;
+            set => Settings.Password = value;
         }
 
         public BrowserV2 OpenNewTab(string url = null)

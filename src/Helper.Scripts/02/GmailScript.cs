@@ -16,7 +16,7 @@ namespace Helper.Scripts
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethod1() 
         {
             gmail.MarkEmailsAsRead();
         }
@@ -34,6 +34,13 @@ namespace Helper.Scripts
             g.LocateAllEmails();
         }
 
+        [TestMethod]
+        public void TestGmailLogin()
+        {
+            var gmail2 = new Gmail("anotherUserId", "anotherPw").Login();
+            gmail2.Quit();
+        }
+
         [TestCleanup]
         public void TeardownTest()
         {
@@ -41,3 +48,4 @@ namespace Helper.Scripts
         }
     }
 }
+ 

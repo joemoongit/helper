@@ -52,24 +52,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="acc\investments\Webull.cs" />
-    <Compile Include="acc\mobile\Gasbuddy.cs" />
+    <Compile Include="acc\other\mobile\Gasbuddy.cs" />
     <Compile Include="acc\liabilities\Paychex.cs" />
-    <Compile Include="acc\mobile\Mcdonalds.cs" />
-    <Compile Include="acc\retail\Amazon.cs" />
-    <Compile Include="acc\retail\Ebay.cs" />
-    <Compile Include="acc\mobile\Samsung.cs" />
-    <Compile Include="acc\retail\Starbucks.cs" />
-    <Compile Include="acc\retail\Walgreens.cs" />
-    <Compile Include="acc\retail\Walmart.cs" />
+    <Compile Include="acc\other\mobile\Mcdonalds.cs" />
+    <Compile Include="acc\mobile\Snapchat.cs" />
+    <Compile Include="acc\mobile\Twitter.cs" />
+    <Compile Include="acc\purchases\Amazon.cs" />
+    <Compile Include="acc\purchases\Ebay.cs" />
+    <Compile Include="acc\other\mobile\Samsung.cs" />
+    <Compile Include="acc\purchases\Starbucks.cs" />
+    <Compile Include="acc\purchases\Walgreens.cs" />
+    <Compile Include="acc\purchases\Walmart.cs" />
+    <Compile Include="Registry\RegistryTemplate.cs" />
     <Compile Include="Tools\BrowserV3.cs" />
-    <Compile Include="Settings\Settings.cs" />
-    <Compile Include="Settings\SettingsV2.cs" />
+    <Compile Include="Tools\Settings\Settings.cs" />
+    <Compile Include="Tools\Settings\SettingsV2.cs" />
     <Compile Include="Sites\Youtube.cs" />
-    <Compile Include="zRecycleBin\InsellerateLoginPage.cs" />
+    <Compile Include="zRecycleBin\OldPage.cs" />
     <Compile Include="Tools\BrowserV2.cs" />
     <Compile Include="Tools\Browser.cs" />
     <Compile Include="Registry\Registry.cs" />
-    <Compile Include="LoginService\Service.cs" />
+    <Compile Include="Tools\LoginService\Service.cs" />
     <Compile Include="zRecycleBin\PostJsonToServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="zRecycleBin\Settings\Settings.cs" />
@@ -104,9 +107,10 @@
     <Compile Include="zRecycleBin\UrlBuilder.cs" />
     <Compile Include="zRecycleBin\Utility.cs" />
     <Compile Include="Tools\WebDriver.cs" />
-    <Compile Include="LoginService\LoginElements.cs" />
+    <Compile Include="Tools\LoginService\LoginElements.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="acc\liabilities\content\Netflix.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

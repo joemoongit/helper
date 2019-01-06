@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 
 namespace Helper.Library.Sites
 {
-    public class Github : BrowserV2
+    public class Github : Browser
     {
         public Github()
         {

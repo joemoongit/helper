@@ -8,25 +8,27 @@ namespace Helper.Tests
     [TestClass]
     public class BrowserTest
     {
-        protected Browser bpage;
+        protected Browser page;
+
         [TestInitialize]
         public void SetupTest()
         {
-            bpage = new Browser();
+            page = new Browser();
         }
 
         [TestMethod]
         public void TestOpenNewTab()
         {
-            bpage.OpenNewTab("https://www.google.com");
-            WebDriver.WaitUntilElementIsVisible(bpage.webDriver(), By.TagName("body"), 5);
-            Assert.IsTrue(bpage.webDriver().FindElement(By.XPath("//*[@id=\"hplogo\"]")).Displayed);
+            page.Initalize();
+            page.OpenNewTab("https://www.google.com");
+            WebDriver.WaitUntilElementIsVisible(page.webDriver, By.TagName("body"), 5);
+            Assert.IsTrue(page.webDriver.FindElement(By.XPath("//*[@id=\"hplogo\"]")).Displayed);
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            bpage.Quit();
+            page.Quit();
         }
     }
 }

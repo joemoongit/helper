@@ -12,13 +12,13 @@ namespace Helper.Scripts.OtherSites
         [TestInitialize]
         public void SetupTest()
         {
-            t = new Toyota();
+            t = new Toyota().Login();
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            t.Login();
+            
         }
 
         [TestCleanup]

@@ -12,13 +12,13 @@ namespace Helper.Scripts.OtherSites
         [TestInitialize]
         public void SetupTest()
         {
-            d = new Directvnow();
+            d = new Directvnow().Login();
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            d.Login();
+            
         }
 
         [TestCleanup]

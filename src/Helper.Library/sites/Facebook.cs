@@ -8,7 +8,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Helper.Library.Sites
 {
-    public class Facebook : BrowserV2
+    public class Facebook : Browser
     {
         public Facebook()
         {
@@ -25,29 +25,29 @@ namespace Helper.Library.Sites
         }
     }
 
-    public class FacebookAccountSettings : BrowserV2
+    public class FacebookAccountSettings : Browser
     {
         public FacebookAccountSettings(Facebook f)
         {
-            Driver = f.webDriver();
+            Driver = f.webDriver;
             WebDriver.WaitUntilElementIsVisible(Driver, By.XPath(""), 5);
         }
     }
 
-    public class FacebookHome : BrowserV2
+    public class FacebookHome : Browser
     {
         public FacebookHome(Facebook f)
         {
-            Driver = f.webDriver();
+            Driver = f.webDriver;
             WebDriver.WaitUntilElementIsVisible(Driver, By.XPath("//*[@id=\"u_0_c\"]/a"), 5).Click();
         }
     }
 
-    public class FacebookProfilePage : BrowserV2
+    public class FacebookProfilePage : Browser
     {
         public FacebookProfilePage(Facebook f)
         {
-            Driver = f.webDriver();
+            Driver = f.webDriver;
             WebDriver.WaitUntilElementIsVisible(Driver, By.CssSelector("#u_0_a > div:nth-child(1) > div:nth-child(1) > div > a > span > span"), 5).Click();
         }
 

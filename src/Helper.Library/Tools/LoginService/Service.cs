@@ -10,7 +10,7 @@ namespace Helper.Library
 {
     public static class Service
     {
-        public static BrowserV2 Login(BrowserV2 browser, LoginElements loginElements)
+        public static Browser Login(Browser browser, LoginElements loginElements)
         {
             loginElements.LoginField.Click();
             loginElements.LoginField.SendKeys(browser.UserId);
@@ -20,9 +20,9 @@ namespace Helper.Library
             return browser;
         }
 
-        public static BrowserV2 LoginWithWait(BrowserV2 browser, LoginElements loginElements)       //for ATT
+        public static Browser LoginWithWait(Browser browser, LoginElements loginElements)       //for ATT
         {
-            WebDriver.WaitUntilElementIsVisible(browser.webDriver(), loginElements.By1, 5).Click();
+            WebDriver.WaitUntilElementIsVisible(browser.webDriver, loginElements.By1, 5).Click();
             loginElements.LoginField.SendKeys(browser.UserId);
             loginElements.PasswordField.Click();
             loginElements.PasswordField.SendKeys(browser.Password);
@@ -30,24 +30,35 @@ namespace Helper.Library
             return browser;
         }
 
-        public static BrowserV3 LoginGoogle(BrowserV3 browser, GoogleLoginElements loginElements)
+        public static Browser LoginGoogle(Browser browser, LoginElementsV2 loginElements)
         {
             loginElements.LoginField.Click();
             loginElements.LoginField.SendKeys(browser.UserId);
-            loginElements.LoginButton.Click();
-            WebDriver.WaitUntilElementIsVisible(browser.webDriver, loginElements.By2, 5).Click();
+            loginElements.Next.Click();
+            WebDriver.WaitUntilElementIsVisible(browser.webDriver, loginElements.By3, 5).Click();
             loginElements.PasswordField.SendKeys(browser.Password);
-            loginElements.PasswordNextButton.Click();
+            loginElements.LoginButton.Click();
+            return browser;
+        }
+
+        public static BrowserV2 LoginGoogle(BrowserV2 browser, LoginElementsV2 loginElements)
+        {
+            loginElements.LoginField.Click();
+            loginElements.LoginField.SendKeys(browser.UserId);
+            loginElements.Next.Click();
+            WebDriver.WaitUntilElementIsVisible(browser.webDriver, loginElements.By3, 5).Click();
+            loginElements.PasswordField.SendKeys(browser.Password);
+            loginElements.LoginButton.Click();
             return browser;
         }
 
         //WIP
-        public static BrowserV2 PullStatement(BrowserV2 browser)
+        public static Browser PullStatement(Browser browser)
         {
             return browser;
         }
 
-        public static BrowserV2 SchedulePayment(BrowserV2 browser)
+        public static Browser SchedulePayment(Browser browser)
         {
             return browser;
         }

@@ -12,9 +12,10 @@ namespace Helper.Library
         protected ISettings Settings;
         protected IWebDriver Driver;
 
-        public Browser()
+        public Browser Initalize()
         {
             Driver = WebDriver.Driver();
+            return this;
         }
 
         public Browser NavigateTo(string url)
@@ -35,9 +36,9 @@ namespace Helper.Library
             return this;
         }
 
-        public IWebDriver webDriver()
+        public IWebDriver webDriver
         {
-            return Driver;
+            get => Driver;
         }
 
         public string Url
@@ -55,7 +56,7 @@ namespace Helper.Library
             get => Settings.Password;
         }
 
-        public Browser OpenNewTab(string url)
+        public Browser OpenNewTab(string url = null)
         {
             ((IJavaScriptExecutor)Driver).ExecuteScript("window.open()");
             List<string> tabs = new List<string>(Driver.WindowHandles);
@@ -65,7 +66,7 @@ namespace Helper.Library
             return this;
         }
 
-        public Browser SwitchTab<T> (T index)
+        public Browser SwitchTab<T>(T index)
         {
             List<string> tabs = new List<string>(Driver.WindowHandles);
             Driver.SwitchTo().Window(tabs[Int32.Parse(index.ToString())]);
@@ -87,7 +88,7 @@ namespace Helper.Library
             return this;
         }
 
-        public Browser DuplicatePage()              //use send keys??
+        public Browser DuplicatePage()
         {
             //var urlBuilder = new UrlBuilder(Settings);
             //Driver.Navigate().GoToUrl(urlBuilder.ReturnUrl());

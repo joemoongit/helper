@@ -13,13 +13,13 @@ namespace Helper.Scripts.OtherSites
         [TestInitialize]
         public void SetupTest()
         {
-            n = new Nissan();
+            n = new Nissan().Login();
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            n.Login();
+            
         }
 
         [TestCleanup]

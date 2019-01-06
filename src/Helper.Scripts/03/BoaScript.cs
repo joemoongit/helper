@@ -12,14 +12,21 @@ namespace Helper.Scripts.BankSites
         [TestInitialize]
         public void SetupTest()
         {
-            b = new Boa();
+            b = new Boa().Login();
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            b.Login();
-            //b.PullStatements();
+            b.ViewLastStatement();
+        }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            var bb = new BoaStatementAndDocuments(b);
+            bb.ToggleYear(2018);
+            bb.ViewStatement("april");
         }
 
         [TestCleanup]

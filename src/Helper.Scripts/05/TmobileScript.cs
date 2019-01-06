@@ -12,13 +12,13 @@ namespace Helper.Scripts.OtherSites
         [TestInitialize]
         public void SetupTest()
         {
-            t = new Tmobile();
+            t = new Tmobile().Login();
         }
 
         [TestMethod]
         public void TestMethod1()
         {
-            t.Login();
+            
         }
 
         [TestCleanup]
