@@ -56,7 +56,6 @@
     <Compile Include="03\BoaScript.cs" />
     <Compile Include="03\AmexScript.cs" />
     <Compile Include="05\AllstateScript.cs" />
-    <Compile Include="05\AllstateScript2.cs" />
     <Compile Include="05\TmobileScript.cs" />
     <Compile Include="05\NissanScript.cs" />
     <Compile Include="05\ToyotaScript.cs" />

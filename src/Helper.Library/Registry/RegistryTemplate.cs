@@ -302,4 +302,11 @@ namespace Helper.Library.Registry
             set => password = value;
         }
     }
+
+    public class StackoverflowSettings : ISettings
+    {
+        public string Url => "https://stackoverflow.com/users/login";
+        public string UserId => "userId";
+        public string Password => "pw";
+    }
 }

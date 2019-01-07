@@ -19,7 +19,12 @@ namespace Helper.Scripts.BankSites
         public void TestMethod1()
         {
             a.Login();
-            a.PullStatements();
+        }
+
+        [TestMethod]
+        public void TestExpFeatures()
+        {
+            var PullStatements = new AmexExpFeatures(a).PullStatements();
         }
 
         [TestCleanup]
