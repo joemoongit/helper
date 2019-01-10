@@ -16,19 +16,19 @@ namespace Helper.Scripts
         }
 
         [TestMethod]
-        public void TestMethod1() 
+        public void MarkEmailsAsRead() 
         {
             gmail.MarkEmailsAsRead();
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void NavigateToAccountSettings()
         {
             var gmailAccountSettings = new GmailAccountSettings(gmail);
         }
 
         [TestMethod]
-        public void TestMethod3()
+        public void OutputAllEmails()
         {
             var g = new GmailExpFeatures(gmail);
             g.LocateAllEmails();

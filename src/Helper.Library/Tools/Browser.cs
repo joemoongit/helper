@@ -49,11 +49,13 @@ namespace Helper.Library
         public string UserId
         {
             get => Settings.UserId;
+            set => Settings.UserId = value;
         }
 
         public string Password
         {
             get => Settings.Password;
+            set => Settings.Password = value;
         }
 
         public Browser OpenNewTab(string url = null)

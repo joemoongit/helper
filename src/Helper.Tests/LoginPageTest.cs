@@ -14,7 +14,7 @@ namespace Helper.Tests
         [TestInitialize]
         public void SetupTest()
         {
-            page = new LoginPage("to test Login page");
+            page = new LoginPage("to test some Login page");
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace Helper.Tests
             for (var i = 0; i<5; i++)
             {
                 page.LoginAs("wrongUserId", "wrongPassword");
-                WebDriver.WaitUntilElementIsVisible(page.webDriver(), By.TagName("li"), 5);
+                WebDriver.WaitUntilElementIsVisible(page.webDriver, By.TagName("li"), 5);
                 Assert.IsTrue(page.LoginFailMessage.Displayed);
             }
             Assert.IsTrue(page.Recaptcha.Displayed);

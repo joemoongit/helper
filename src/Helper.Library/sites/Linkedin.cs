@@ -24,13 +24,6 @@ namespace Helper.Library.Sites
         }
     }
 
-    public class LinkedinSettings : ISettings
-    {
-        public string Url => "https://www.linkedin.com/";
-        public string UserId => "";
-        public string Password => "";
-    }
-
     public class LinkedinLoginElements : LoginElements
     {
         public LinkedinLoginElements(IWebDriver driver)

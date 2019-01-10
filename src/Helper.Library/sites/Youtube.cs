@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 
 namespace Helper.Library.Sites
 {
-    public class Youtube : BrowserV2
+    public class Youtube : Browser
     {
         public Youtube()
         {

@@ -25,6 +25,15 @@ namespace Helper.Tests
             Assert.IsTrue(page.webDriver.FindElement(By.XPath("//*[@id=\"hplogo\"]")).Displayed);
         }
 
+        [TestMethod]
+        public void TestSwitichTab()
+        {
+            page.OpenNewTab("https://markets.wsj.com");
+            page.SwitchTab(0);
+            page.SwitchTab("1");
+            page.Close();
+        }
+
         [TestCleanup]
         public void TeardownTest()
         {

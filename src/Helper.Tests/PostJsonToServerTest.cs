@@ -12,16 +12,13 @@ namespace Helper.Tests
         protected LoginPage page2;
         protected LoginPage page3;
 
-        protected PostJsonToServer post;
-
         [TestInitialize]
         public async Task SetupTest()
         {
             page = new LoginPage();
             page2 = new LoginPage();
             page3 = new LoginPage();
-            post = new PostJsonToServer(page);
-            await post.PostToCampaign(10154, 3);
+            await PostJsonToServer.HttpClient(page.Url, "");
         }
 
         [TestMethod]

@@ -7,12 +7,12 @@ using OpenQA.Selenium;
 
 namespace Helper.Library.Sites
 {
-    public class Gmail : BrowserV2
+    public class Gmail : Browser
     {
         public Gmail(string userId = null, string password = null)
         {
             Initalize();
-            Settings = new GmailSettingsV2();
+            Settings = new GmailSettings();
             NavigateTo(Url);
 
             if (userId != null && password != null)

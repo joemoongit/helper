@@ -24,11 +24,14 @@ namespace Helper.Library.Sites
         }
     }
 
-    public class VerizonSettings : ISettings
+    public class VerizonSettings : Settings
     {
-        public string Url => "https://www.verizonwireless.com/my-verizon/";
-        public string UserId => "";
-        public string Password => "";
+        public VerizonSettings()
+        {
+            Url = "https://www.verizonwireless.com/my-verizon/";
+            UserId = "";
+            Password = "";
+    }
     }
 
     public class VerizonLoginElements : LoginElements

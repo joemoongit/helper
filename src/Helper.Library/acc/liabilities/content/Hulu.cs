@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 
 namespace Helper.Library.Sites
 {
-    public class Hulu :  Browser
+    public class Hulu : Browser
     {
         public Hulu()
         {

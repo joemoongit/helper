@@ -1,33 +1,32 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Helper.Library;
+using Helper.Library.Sites;
 
 namespace Helper.Scripts
 {
     [TestClass]
-    public class BrowserScript
+    public class FbPhotoScript
     {
-        protected Browser page;
+        protected Facebook fb;
+        protected FacebookProfilePage navbar;
 
         [TestInitialize]
         public void SetupTest()
         {
-            page = new Browser();
+            fb = new Facebook();
+            navbar = new FacebookProfilePage(fb);
         }
-
+ 
         [TestMethod]
-        public void RunScript()
+        public void TestMethod1()
         {
-            page.OpenNewTab("https://markets.wsj.com");
-            page.SwitchTab(0);
-            page.SwitchTab("1");
-            page.Close();
+            navbar.SavePhotos();
         }
 
         [TestCleanup]
         public void TeardownTest()
         {
-            page.Quit();
+            navbar.Quit();
         }
     }
 }

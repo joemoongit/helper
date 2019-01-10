@@ -24,13 +24,6 @@ namespace Helper.Library.Sites
         }
     }
 
-    public class IndeedSettings : ISettings
-    {
-        public string Url => "https://secure.indeed.com/account/login?service=my&hl=en_US&co=US&continue=https%3A%2F%2Fwww.indeed.com%2F";
-        public string UserId => "josephmoontutor@gmail.com";
-        public string Password => "Sprite1234";
-    }
-
     public class IndeedLoginElements : LoginElements
     {
         public IndeedLoginElements(IWebDriver driver)

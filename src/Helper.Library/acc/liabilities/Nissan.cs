@@ -9,7 +9,7 @@ namespace Helper.Library.Sites
 {
     public class Nissan : Browser
     {
-        public Nissan(Browser browser = null)
+        public Nissan()
         {
             Settings = new NissanSettings();
             Initalize();            

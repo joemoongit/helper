@@ -8,16 +8,33 @@ namespace Helper.Library
 {
     public interface ISettings
     {
-        string Url { get; }
-        string UserId { get; }
-        string Password { get; }
+        string Url { get; set; }
+        string UserId { get; set; }
+        string Password { get; set; }
     }
 
-    //template
     public abstract class Settings : ISettings
     {
-        public string Url => "Url";
-        public string UserId => "UserId";
-        public string Password => "Password";
+        private string url;
+        private string userId;
+        private string password;
+         
+        public string Url
+        {
+            get => url;
+            set => url = value;
+        }
+
+        public string UserId
+        {
+            get => userId;
+            set => userId = value;
+        }
+
+        public string Password
+        {
+            get => password;
+            set => password = value;
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace Helper.Library
             return browser;
         }
 
-        public static Browser LoginWithWait(Browser browser, LoginElements loginElements)       //for ATT
+        public static Browser LoginWithWait(Browser browser, LoginElements loginElements)       //for ATT login page
         {
             WebDriver.WaitUntilElementIsVisible(browser.webDriver, loginElements.By1, 5).Click();
             loginElements.LoginField.SendKeys(browser.UserId);
@@ -31,17 +31,6 @@ namespace Helper.Library
         }
 
         public static Browser LoginGoogle(Browser browser, LoginElementsV2 loginElements)
-        {
-            loginElements.LoginField.Click();
-            loginElements.LoginField.SendKeys(browser.UserId);
-            loginElements.Next.Click();
-            WebDriver.WaitUntilElementIsVisible(browser.webDriver, loginElements.By3, 5).Click();
-            loginElements.PasswordField.SendKeys(browser.Password);
-            loginElements.LoginButton.Click();
-            return browser;
-        }
-
-        public static BrowserV2 LoginGoogle(BrowserV2 browser, LoginElementsV2 loginElements)
         {
             loginElements.LoginField.Click();
             loginElements.LoginField.SendKeys(browser.UserId);

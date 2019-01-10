@@ -66,12 +66,14 @@
     <Compile Include="acc\purchases\Walgreens.cs" />
     <Compile Include="acc\purchases\Walmart.cs" />
     <Compile Include="Registry\RegistryTemplate.cs" />
-    <Compile Include="Tools\BrowserV2.cs" />
+    <Compile Include="Sites\Indeed.cs" />
+    <Compile Include="Sites\Linkedin.cs" />
+    <Compile Include="Sites\Slickdeals.cs" />
+    <Compile Include="Sites\Stackoverflow.cs" />
+    <Compile Include="Tools\Browser.cs" />
     <Compile Include="Tools\Settings\Settings.cs" />
-    <Compile Include="Tools\Settings\SettingsV2.cs" />
     <Compile Include="Sites\Youtube.cs" />
     <Compile Include="zRecycleBin\OldPage.cs" />
-    <Compile Include="Tools\Browser.cs" />
     <Compile Include="Registry\Registry.cs" />
     <Compile Include="Tools\LoginService\Service.cs" />
     <Compile Include="zRecycleBin\PostJsonToServer.cs" />

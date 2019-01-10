@@ -9,7 +9,7 @@ namespace Helper.Library.Sites
 {
     public class Toyota : Browser
     {
-        public Toyota(Browser browser = null)
+        public Toyota()
         {
             Settings = new ToyotaSettings();
             Initalize();
