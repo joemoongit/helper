@@ -51,20 +51,8 @@
   <ItemGroup>
     <Compile Include="LoginScripts\GmailScript.cs" />
     <Compile Include="LoginScripts\FbScript.cs" />
-    <Compile Include="LoginScripts\YoutubeScript.cs" />
-    <Compile Include="03\CitiScript.cs" />
-    <Compile Include="03\BoaScript.cs" />
-    <Compile Include="03\AmexScript.cs" />
-    <Compile Include="05\AllstateScript.cs" />
-    <Compile Include="05\TmobileScript.cs" />
-    <Compile Include="05\NissanScript.cs" />
-    <Compile Include="05\ToyotaScript.cs" />
-    <Compile Include="05\DirectvnowScript.cs" />
-    <Compile Include="05\AttScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="LoginScripts\LoginScript.cs" />
-    <Compile Include="03\WfScript.cs" />
-    <Compile Include="04\FbPhotoScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

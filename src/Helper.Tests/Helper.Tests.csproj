@@ -53,10 +53,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginPageTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BrowserTest.cs" />
-    <Compile Include="PostJsonToServerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

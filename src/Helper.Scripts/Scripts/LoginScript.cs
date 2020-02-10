@@ -10,7 +10,7 @@ namespace Helper.Scripts
         protected Facebook fb;
         protected Github github;
         protected Gmail gmail;
-        protected Packtpub packtpub;
+        protected Youtube youtube;
 
         [TestInitialize]
         public void SetupTest()
@@ -18,7 +18,7 @@ namespace Helper.Scripts
             github = new Github();
             fb = new Facebook();
             gmail = new Gmail();
-            packtpub = new Packtpub();
+            youtube = new Youtube();
         }
 
         [TestMethod]
@@ -27,16 +27,16 @@ namespace Helper.Scripts
             github.Login();
             fb.Login();
             gmail.Login();
-            packtpub.Login();
+            youtube.Login();
         }
 
         [TestCleanup]
         public void TeardownTest()
-         {
+        {
             fb.Quit();
             github.Quit();
             gmail.Quit();
-            packtpub.Quit();
+            youtube.Quit();
         }
     }
 }
