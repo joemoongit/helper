@@ -27,7 +27,7 @@ namespace Helper.Library.Sites
             Driver = driver;
             By1 = By.Id("login_field");
             By2 = By.Id("password");
-            By3 = By.CssSelector("#login > form > div.auth-form-body.mt-3 > input.btn.btn-primary.btn-block");
+            By3 = By.XPath("//*[@id=\"login\"]/div[4]/form/div/input[12]");
         }
     }
 }
