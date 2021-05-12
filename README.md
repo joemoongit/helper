@@ -2,6 +2,6 @@
 
 Automated GitHub, Facebook, Gmail, Youtube login & other basic tasks
 
-Refer to 'src/Helper.Scripts/Scripts/LoginScript.cs' for the login script
+Refer to 'src/Helper.Scripts/Scripts/Script.cs' for the scripts
 
-Edit 'src/Helper.Library/Registry/RegistryTemplate.cs' to add usernames & passwords
+Edit 'src/Helper.Library/Registry/Registry.cs' to add usernames & passwords
