@@ -89,12 +89,5 @@ namespace Helper.Library
             }
             return this;
         }
-
-        public Browser DuplicatePage()
-        {
-            //var urlBuilder = new UrlBuilder(Settings);
-            //Driver.Navigate().GoToUrl(urlBuilder.ReturnUrl());
-            return this;
-        }
     }
 }
